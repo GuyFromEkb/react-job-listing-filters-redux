@@ -1,4 +1,8 @@
 import PropTypes from 'prop-types';
+import { useDispatch, useSelector } from 'react-redux';
+
+import { addFilter } from 'store/filter/filter-action';
+
 import { Badge } from 'UI/Badge';
 import { Card } from 'UI/Card';
 import { Stack } from 'UI/Stack';
@@ -18,7 +22,8 @@ const JobPosition = ({
   languages,
   tools,
 }) => {
-  const badges = [].concat(role, level, ...languages, ...tools);
+  const badges = [].concat(role, level, ...languages, ...tools)
+  const dispatch = useDispatch()
 
   return (
     <Card isFeatured={featured}>
@@ -65,7 +70,7 @@ const JobPosition = ({
         </div>
         <Stack>
           {badges.map(item => (
-            <Badge key={item}>{item}</Badge>
+            <Badge onClick={() => dispatch(addFilter(item))} key={item}>{item}</Badge>
           ))}
         </Stack>
       </div>
@@ -73,7 +78,7 @@ const JobPosition = ({
   )
 }
 
-export {JobPosition};
+export { JobPosition };
 
 JobPosition.propTypes = {
   id: PropTypes.number,
