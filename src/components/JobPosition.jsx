@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch} from 'react-redux';
 
-import { addFilter } from 'store/filter/filter-action';
+import { addFilter } from 'store/filter/filterAction';
 
 import { Badge } from 'UI/Badge';
 import { Card } from 'UI/Card';

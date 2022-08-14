@@ -1,4 +1,4 @@
-import { ADD_FILTER, REMOVE_FILTER, REMOVE_ALL_FILTER } from "./filter-constant";
+import { ADD_FILTER, REMOVE_FILTER, REMOVE_ALL_FILTER } from "./filterAction"
 
 const filterReducer = (state = [], action) => {
 
@@ -15,7 +15,6 @@ const filterReducer = (state = [], action) => {
         default:
             return state
     }
-
 }
 
 export { filterReducer }
