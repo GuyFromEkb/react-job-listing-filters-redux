@@ -17,5 +17,6 @@ const removeAllFilter = {
     type: REMOVE_ALL_FILTER
 }
 
+
 export { addFilter, removeFilter, removeAllFilter }
 export { ADD_FILTER, REMOVE_FILTER, REMOVE_ALL_FILTER }
