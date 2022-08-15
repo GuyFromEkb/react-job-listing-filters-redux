@@ -1,36 +1,44 @@
-const ADD_FILTER = "ADD_FILTER"
-const REMOVE_FILTER = "REMOVE_FILTER"
-const REMOVE_ALL_FILTER = "REMOVE_ALL_FILTER"
+// const ADD_FILTER = "ADD_FILTER"
+// const REMOVE_FILTER = "REMOVE_FILTER"
+// const REMOVE_ALL_FILTER = "REMOVE_ALL_FILTER"
 
-interface AddFilterAction {
-    type: ADD_FILTER,
-    payload: string
-}
-interface RemoveFilterAction {
-    type: ADD_FILTER,
-    payload: string
-}
-interface AddFilterAction {
-    type: ADD_FILTER,
-    payload: string
+enum UserActionTypes {
+    ADD_FILTER = "ADD_FILTER",
+    REMOVE_FILTER = "REMOVE_FILTER",
+    REMOVE_ALL_FILTER = "REMOVE_ALL_FILTER"
 }
 
-interface FilterAction {
-    type: string,
-    payload?: string
+export interface AddFilterAction {
+    type: UserActionTypes.ADD_FILTER,
+    payload: string
 }
+export interface RemoveFilterAction {
+    type: UserActionTypes.REMOVE_FILTER,
+    payload: string
+}
+export interface RemoveAllFilterAction {
+    type: UserActionTypes.REMOVE_ALL_FILTER,
+}
+
+// interface FilterAction {
+//     type: string,
+//     payload?: string
+// }
+
+type FilterAction = AddFilterAction | RemoveFilterAction | RemoveAllFilterAction
+
 const initialState: string[] = []
 
 const filterReducer = (state = initialState, action: FilterAction): string[] => {
 
     switch (action.type) {
-        case ADD_FILTER: {
+        case UserActionTypes.ADD_FILTER: {
             return [...state, action.payload]
         }
-        case REMOVE_FILTER: {
-            return state
+        case UserActionTypes.REMOVE_FILTER: {
+            return state.filter(item => item !== action.payload)
         }
-        case REMOVE_ALL_FILTER: {
+        case UserActionTypes.REMOVE_ALL_FILTER: {
             return initialState
         }
         default:
@@ -38,4 +46,5 @@ const filterReducer = (state = initialState, action: FilterAction): string[] => 
     }
 }
 
+export { UserActionTypes }
 export { filterReducer }
