@@ -1,9 +1,9 @@
-import { FilterAction } from '../../interface/interface'
+import { FilterActionType } from '../../interface/interface'
 import { FilterActionTypes } from './filterAction'
 
 const initialState: string[] = []
 
-const filterReducer = (state = initialState, action: FilterAction): string[] => {
+const filterReducer = (state = initialState, action: FilterActionType): string[] => {
 
     switch (action.type) {
         case FilterActionTypes.ADD_FILTER: {

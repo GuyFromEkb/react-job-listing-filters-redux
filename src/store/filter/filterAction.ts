@@ -1,4 +1,4 @@
-import { AddFilterAction, RemoveFilterAction, RemoveAllFilterAction, } from '../../interface/interface'
+import { IAddFilterAction, IRemoveFilterAction, IRemoveAllFilterAction, } from '../../interface/interface'
 
 enum FilterActionTypes {
     ADD_FILTER = "ADD_FILTER",
@@ -6,16 +6,16 @@ enum FilterActionTypes {
     REMOVE_ALL_FILTER = "REMOVE_ALL_FILTER"
 }
 
-const addFilter = (filter: string): AddFilterAction => ({
+const addFilter = (filter: string): IAddFilterAction => ({
     type: FilterActionTypes.ADD_FILTER,
     payload: filter
 })
-const removeFilter = (filter: string): RemoveFilterAction => ({
+const removeFilter = (filter: string): IRemoveFilterAction => ({
     type: FilterActionTypes.REMOVE_FILTER,
     payload: filter
 })
 
-const removeAllFilter: RemoveAllFilterAction = {
+const removeAllFilter: IRemoveAllFilterAction = {
     type: FilterActionTypes.REMOVE_ALL_FILTER,
 }
 

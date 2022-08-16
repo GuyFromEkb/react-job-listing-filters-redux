@@ -1,10 +1,10 @@
 import { PositionActionTypes } from "./positionAction"
-import { IPosition, IFilterAction } from "../../interface/interface"
+import { IPosition, IPositionAction } from "../../interface/interface"
 
 
 const initialState: IPosition[] = []
 
-const positionReducer = (state = initialState, action: IFilterAction): IPosition[] => {
+const positionReducer = (state = initialState, action: IPositionAction): IPosition[] => {
 
     switch (action.type) {
         case PositionActionTypes.ADD_POSITIONS: {

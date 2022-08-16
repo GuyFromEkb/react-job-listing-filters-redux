@@ -1,21 +1,21 @@
 import { FilterActionTypes } from "../store/filter/filterAction"
 import { PositionActionTypes } from "../store/position/positionAction"
 
-export interface AddFilterAction {
+export interface IAddFilterAction {
     type: FilterActionTypes.ADD_FILTER,
     payload: string
 }
 
-export interface RemoveFilterAction {
+export interface IRemoveFilterAction {
     type: FilterActionTypes.REMOVE_FILTER,
     payload: string
 }
 
-export interface RemoveAllFilterAction {
+export interface IRemoveAllFilterAction {
     type: FilterActionTypes.REMOVE_ALL_FILTER,
 }
 
-export type FilterAction = AddFilterAction | RemoveFilterAction | RemoveAllFilterAction
+export type FilterActionType = IAddFilterAction | IRemoveFilterAction | IRemoveAllFilterAction
 
 export interface IPosition {
     id: number,
@@ -33,7 +33,7 @@ export interface IPosition {
     tools: string[]
 }
 
-export interface IFilterAction {
+export interface IPositionAction {
     type: PositionActionTypes.ADD_POSITIONS,
     payload: IPosition[]
 }
