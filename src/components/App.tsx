@@ -10,7 +10,7 @@ function App() {
   const dispatch = useDispatch()
 
   useEffect(() => {
-    dispatch(addPositions(data))
+    dispatch(addPositions(data))    
     //eslint-disable-next-line
   }, [])
 
