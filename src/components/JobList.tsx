@@ -1,18 +1,14 @@
-import data from '../mock/data.json';
-import { JobPosition } from './JobPosition';
-
-import { useTypeSelector } from '../hook/useTypeSelector';
+import { useTypeSelector } from '../hook/useTypeSelector'
+import { filterPositions } from '../store/position/positionSelector'
+import { JobPosition } from './JobPosition'
 
 const JobList = () => {
-
-  const state = useTypeSelector(state => state.filter)
-
-  console.log("state!", state);
-
+  const activeFilters = useTypeSelector(state => state.filter)
+  const positions = useTypeSelector((state) => filterPositions(state, activeFilters))
 
   return (
     <div className='job-list'>
-      {data.map(item => (
+      {positions.map(item => (
         <JobPosition key={item.id} {...item} />
       ))}
     </div>

@@ -1,8 +1,10 @@
 import { createStore, combineReducers } from "redux";
-import { filterReducer } from "./filterReducer";
+import { filterReducer } from "./filter/filterReducer";
+import { positionReducer } from "./position/positionReducer";
 
 const rootReducer = combineReducers({
     filter: filterReducer,
+    position: positionReducer
 })
 
 interface IinitialState {
@@ -10,7 +12,7 @@ interface IinitialState {
 }
 
 const initialState: IinitialState = {
-    filter: ["saaa","masa"]
+    filter: []
 }
 
 const store = createStore(

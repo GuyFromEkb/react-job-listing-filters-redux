@@ -1,4 +1,4 @@
-import { AddFilterAction, RemoveFilterAction, RemoveAllFilterAction, UserActionTypes } from "./filterReducer";
+import {AddFilterAction,RemoveAllFilterAction,RemoveFilterAction,UserActionTypes} from './filterReducer'
 
 const addFilter = (filter: string): AddFilterAction => ({
     type: UserActionTypes.ADD_FILTER,

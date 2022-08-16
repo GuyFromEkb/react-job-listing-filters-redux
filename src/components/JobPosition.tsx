@@ -1,3 +1,7 @@
+import { useDispatch } from "react-redux"
+
+import { addFilter } from "../store/filter/filterAction"
+
 import { Badge } from "../UI/Badge"
 import { Card } from "../UI/Card"
 import { Stack } from "../UI/Stack"
@@ -34,8 +38,14 @@ const JobPosition: React.FC<JobPositionProps> = (props) => {
 		languages,
 		tools,
 	} = props
-	
+	const dispatch = useDispatch()
+
 	const badges = [role, level, ...languages, ...tools]
+
+	const onAddFilter = (filter: string): void => {
+		dispatch(addFilter(filter))
+
+	}
 
 	return (
 		<Card isFeatured={featured}>
@@ -70,7 +80,7 @@ const JobPosition: React.FC<JobPositionProps> = (props) => {
 				</div>
 				<Stack>
 					{badges.map((item) => (
-						<Badge key={item}>{item}</Badge>
+						<Badge onClick={() => onAddFilter(item)} key={item}>{item}</Badge>
 					))}
 				</Stack>
 			</div>

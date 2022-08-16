@@ -33,6 +33,10 @@ const filterReducer = (state = initialState, action: FilterAction): string[] => 
 
     switch (action.type) {
         case UserActionTypes.ADD_FILTER: {
+            if (state.includes(action.payload)) {
+                return state
+            }
+
             return [...state, action.payload]
         }
         case UserActionTypes.REMOVE_FILTER: {
