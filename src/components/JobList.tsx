@@ -14,5 +14,4 @@ const JobList = () => {
     </div>
   )
 }
-
-export { JobList };
+export { JobList }

@@ -1,8 +1,8 @@
-
 interface StackProps {
   children: React.ReactNode
   pos?: string
 }
+
 const Stack: React.FC<StackProps> = (props) => {
   const { children, pos } = props
   
@@ -15,4 +15,4 @@ const Stack: React.FC<StackProps> = (props) => {
   )
 }
 
-export { Stack };
+export { Stack }

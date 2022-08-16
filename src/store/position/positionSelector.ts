@@ -1,4 +1,4 @@
-import { RootState } from "../store";
+import { RootState } from "../rootReducer"
 
 const allPositions = (state: RootState) => state.position
 

@@ -18,4 +18,4 @@ const Card: React.FC<CardProps> = (props) => {
   )
 }
 
-export { Card };
+export { Card }

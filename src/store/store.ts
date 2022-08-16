@@ -1,27 +1,12 @@
-import { createStore, combineReducers } from "redux";
-import { filterReducer } from "./filter/filterReducer";
-import { positionReducer } from "./position/positionReducer";
+import { createStore } from "redux"
+import { rootReducer } from "./rootReducer"
+import { IinitialRootReducerState } from "../interface/interface"
 
-const rootReducer = combineReducers({
-    filter: filterReducer,
-    position: positionReducer
-})
-
-interface IinitialState {
-    filter: string[]
+const initialState: IinitialRootReducerState = {
+    filter: [],
+    position: []
 }
 
-const initialState: IinitialState = {
-    filter: []
-}
+const store = createStore(rootReducer, initialState)
 
-const store = createStore(
-    rootReducer,
-    initialState
-)
-
-type RootState = ReturnType<typeof rootReducer>
-
-
-export type { RootState }
 export { store }

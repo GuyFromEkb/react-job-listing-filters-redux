@@ -1,4 +1,4 @@
-import { IPosition } from "./positionReducer"
+import { IPosition } from "../../interface/interface"
 
 enum PositionActionTypes {
     ADD_POSITIONS = "ADD_POSITIONS",
